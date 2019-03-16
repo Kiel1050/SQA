@@ -1,11 +1,4 @@
-<?php
-if (!isset($_SESSION)) {
-    session_start();
-    //die('2');
-}
-var_dump($_SESSION);
-//die('1');
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +12,9 @@ var_dump($_SESSION);
 <body>
 
 <?php
-include "controller/index.php";
+include_once('controller/Controller.php');
+$controller = new Controller();
+$controller->invoke();
 ?>
 
 </body>

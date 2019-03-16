@@ -1,16 +1,11 @@
 <?php
 if (isset($_POST) && $_POST != null) {
     $data = $_POST;
-    if ($data['username'] == 'admin' && $data['password'] == 'admin') {
+    session_start();
+    if ($data['username'] == 'admin' && $data['password'] == 'admin') { //right acc
         $_SESSION['loginState'] = 'success';
-    } else {
+    } else { // wrong acc
         $_SESSION['loginState'] = 'failed';
-        var_dump($_SESSION);
-        //die(1);
-        header('Location: ../');
-        exit();
     }
-
-} else { //redirect to login controller
-    header('Location: ../');
 }
+header('Location: /sqa');exit();
